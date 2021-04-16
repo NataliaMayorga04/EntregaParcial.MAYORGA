@@ -20,4 +20,10 @@ Public void Isummarize(Student,Project)
 
 **III. EXTENDIENDO**
 1.
+
 ![img.png](img.png)
+
+2.De los diseños resultantes se debería cambiar la manera en la que se llama a la iteración, ya que como bien lo dice el enunciado ya no será solo una sino varias y lo mismo pasa con las actividades. En los diseños planteados, solo se llama a la única que hay, en este caso se debería de hacer un loop determinar cual es la iteración o actividades que se quieren encontrar para después hacer un if y determinar las propiedades de estas y así tener una búsqueda correcta. 
+Por otro lado lo que no se debe cambiar, es la manera en la que se llama a los proyectos o actividades documentadas, esto en el enunciado no se indica que haya algún cambio.
+
+3.Teniendo en cuenta los cambios necesarios, mi diseño es sencillo a la hora que si se buscan si hay otras iteraciones o actividades se puede encontrar fácilmente con la especificación en cada uno que para una actividad haya varias iteraciones o dependencias, pero siento que podría ser más práctico y el cliente no tuviera que leer tanto a la hora de ver el diagrama, lo ideal es que fuera mucho más resumido. 
