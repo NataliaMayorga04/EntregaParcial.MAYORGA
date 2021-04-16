@@ -1,5 +1,7 @@
 package entities;
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+
 import java.time.Duration;
 
 public abstract class Activity {
@@ -37,6 +39,18 @@ public abstract class Activity {
      *
      * @return
      */
-    public abstract Duration getDuration();
+    public boolean Duration(){
+        String duration= ACTIVE_STATE;
+            if(duration == ACTIVE_STATE){
+                return true;
+            }
+        return false;
+    }
+    public boolean getDuration() throws SabanaResearchException{
+        if (!(getDuration() = !CANCELED_STATE)) {
+            return true;
+        }
+        return false;
+    }
 
 }
