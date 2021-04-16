@@ -18,6 +18,10 @@ public class NormalActivity extends Activity {
 
     @Override
     public boolean getDuration() {
-        return null;
+        return true;
+    }
+    public boolean getDuration throws SabanaResearchException(){
+        if (NormalActivity !steps.contains(steps)){
+        }
     }
 }
