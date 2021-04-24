@@ -16,4 +16,7 @@ public class Question {
         this.description = description;
         this.dedication = dedication;
     }
+
+    public Duration getDedication() {
+    }
 }

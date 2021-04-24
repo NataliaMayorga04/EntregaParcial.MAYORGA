@@ -1,5 +1,6 @@
 package entities;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,17 @@ public class DocumentedActivity extends Activity {
     }
 
     @Override
-    public boolean getDuration() {
-        return null;
+    public Duration getDuration() throws SabanaResearchException {
+        if (this.questions.isEmpty()){
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY);
+        }
+        if (this.activity==null){
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY_WITHOUT_NORMAL_QUESTION);
+        }
+        Duration d= this.activity.getDuration();
+        for (Question q : this.questions){
+            d = d.plus(q.getDedication());
+        }
+        return d;
     }
 }

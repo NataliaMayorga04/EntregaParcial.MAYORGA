@@ -1,5 +1,6 @@
 package entities;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,11 +18,14 @@ public class NormalActivity extends Activity {
     }
 
     @Override
-    public boolean getDuration() {
-        return true;
-    }
-    public boolean getDuration throws SabanaResearchException(){
-        if (NormalActivity !steps.contains(steps)){
+    public Duration getDuration() throws SabanaResearchException {
+        if(this.steps.isEmpty()){
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY);
         }
+        Duration d = Duration.ZERO;
+        for(Step s : this.steps){
+            d = d.plus (s.getDuration());
+        }
+        return d;
     }
 }
