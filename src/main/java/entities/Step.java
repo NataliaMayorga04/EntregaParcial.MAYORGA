@@ -13,5 +13,6 @@ public class Step {
     }
 
     public Duration getDuration() {
+        return duration;
     }
 }

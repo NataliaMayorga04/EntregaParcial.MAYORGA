@@ -11,6 +11,7 @@ public class Question {
     private String description;
     private Duration dedication;
 
+
     public Question(String difficulty, String description, Duration dedication) {
         this.difficulty = difficulty;
         this.description = description;
@@ -18,5 +19,6 @@ public class Question {
     }
 
     public Duration getDedication() {
+        return dedication;
     }
 }

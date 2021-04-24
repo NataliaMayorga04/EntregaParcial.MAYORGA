@@ -21,12 +21,12 @@ public class    Iteration {
     public void addActivity(Activity activity) {
         this.activities.add(activity);
     }
-    public int countOpenActivities(){
+    /*public int countOpenActivities(){
         return (int) this.activities.stream()
                 .map(activity -> activity.isActive())
                 .filter (b -> !b)
                 .count ();
-    }
+    }*/
 
     public Duration getDuration() throws SabanaResearchException {
         if (this.activities.isEmpty()){

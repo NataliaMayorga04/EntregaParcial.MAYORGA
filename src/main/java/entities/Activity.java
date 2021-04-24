@@ -37,18 +37,9 @@ public abstract class Activity {
      *
      * @return
      */
-    public boolean Duration(){
-        String duration= ACTIVE_STATE;
-            if(duration == ACTIVE_STATE){
-                return true;
-            }
-        return false;
-    }
+
     public Duration getDuration() throws SabanaResearchException{
-        if (!(getDuration() = !CANCELED_STATE)) {
-            return true;
-        }
-        return false;
+       return null;
     }
 
 }
