@@ -26,6 +26,35 @@ public class Project {
     public void addIteration(Iteration iteration) {
         this.iterations.add(iteration);
     }
+    public void setDateInit(LocalDate dateInit) {
+        this.dateInit = dateInit;
+    }
+
+    public void setDateEnd(LocalDate dateEnd) {
+        this.dateEnd = dateEnd;
+    }
+    /**
+     * Evaluate if a project is active.
+     *
+     * @return false if the project has not open activities or the dateEnd is before than the system date.
+     */
+    public boolean isActive() {
+        boolean isActive = true;
+        if(LocalDate.now().isAfter(this.dateEnd)){
+            isActive = false;
+        }else {
+            int openActivities = this.countOpenActivities();
+            isActive = openActivities > 0 ;
+        }
+        return isActive;
+    }
+
+    public int countOpenActivities(){
+        return this.iterations
+                .stream()
+                .map(i -> i.countOpenActivities())
+                .reduce (0,(a,b) -> a+b);
+    }
 
     public Duration getDuration() throws SabanaResearchException {
         return Duration.ofDays(0);

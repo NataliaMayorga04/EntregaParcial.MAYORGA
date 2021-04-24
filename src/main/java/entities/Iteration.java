@@ -3,7 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Iteration {
+public class    Iteration {
 
     private String goal;
     private Project project;
@@ -20,5 +20,10 @@ public class Iteration {
     public void addActivity(Activity activity) {
         this.activities.add(activity);
     }
-
+    public int countOpenActivities(){
+        return (int) this.activities.stream()
+                .map(activity -> activity.isActive())
+                .filter (b -> !b)
+                .count ();
+    }
 }
