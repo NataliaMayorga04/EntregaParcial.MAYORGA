@@ -12,9 +12,11 @@ Public void Isummarize(Student,Project)
    
 2. Diagrama de secuencia: 
 ![img_1.png](img_1.png)
+   ![img_7.png](img_7.png)
+   ![img_8.png](img_8.png)
   
    
-3. Diagrama de clases:
+3. Diagrama de clases:![img_6.png](img_6.png)
 
 4. public void searchGroup(), public String whichproject(), public void getSynthesizer()
 
@@ -30,6 +32,7 @@ Por otro lado lo que no se debe cambiar, es la manera en la que se llama a los p
 
 **BONO SEGUNDO PARCIAL**
 ![img_4.png](img_4.png)
+
 
 **BONO PRIMER PARCIAL**
 ![img_5.png](img_5.png)
