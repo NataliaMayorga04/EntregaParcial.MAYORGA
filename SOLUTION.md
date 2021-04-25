@@ -26,3 +26,8 @@ Public void Isummarize(Student,Project)
 Por otro lado lo que no se debe cambiar, es la manera en la que se llama a los proyectos o actividades documentadas, esto en el enunciado no se indica que haya algún cambio.
 
 3.Teniendo en cuenta los cambios necesarios, mi diseño es sencillo a la hora que si se buscan si hay otras iteraciones o actividades se puede encontrar en una sola clase abstracta, pero siento que podría ser más práctico y así el cliente no tuviera que leer tanto a la hora de ver el diagrama, lo ideal es que fuera mucho más resumido. 
+
+
+**BONO**
+
+![img_4.png](img_4.png)

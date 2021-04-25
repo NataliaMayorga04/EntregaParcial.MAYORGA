@@ -16,14 +16,14 @@ public class Group {
     public void addProject(Project plan) {
         this.projects.add(plan);
     }
-    /*public int countActiveProjects(){
-        return (int)this.projects
-                .stream()
-                .map(p->p.isActive())
-                .filter (b-> b)
-                .count();
+    public int countActiveProjects() {
+        int count = 0;
+        for (Project p : this.projects) {
+            if (p.isActive()) {
+                count++;
+            }
+        }
+        return count;
     }
 
-    public Object countsActiveProjects() {
-    }*/
 }

@@ -38,15 +38,14 @@ public class Project {
      *
      * @return false if the project has not open activities or the dateEnd is before than the system date.
      */
-   /* public boolean isActive() {
-        boolean isActive = true;
-        if(LocalDate.now().isAfter(this.dateEnd)){
-            isActive = false;
-        }else {
-            int openActivities = this.countOpenActivities();
-            isActive = openActivities > 0 ;
+    public boolean isActive() {
+        boolean result = true;
+        for (Iteration i:this.iterations) {
+            if (i.countOpenActivities()==0||this.dateEnd.isBefore(LocalDate.now())){
+                result=false;
+            }
         }
-        return isActive;
+        return result;
     }
 
     public int countOpenActivities(){
@@ -54,7 +53,7 @@ public class Project {
                 .stream()
                 .map(i -> i.countOpenActivities())
                 .reduce (0,(a,b) -> a+b);
-    }*/
+    }
 
     public Duration getDuration() throws SabanaResearchException {
         if (this.iterations.isEmpty()){
