@@ -114,6 +114,19 @@ public class ProjectTest {
 
     }
 
+    @Test
+    @DisplayName("GIVEN a documented activity with normal activity without steps WHEN get duration THEN get SabanaResearchException")
+    public void shouldCalculateExecutiveSynthesizer() throws SabanaResearchException{
+        Iteration iteration = new Iteration("Goal",wellFormedProject);
+        StudentSynthesizer studentSynthesizer1 = new StudentSynthesizer();
+
+        NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
+        normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        wellFormedProject.getIterations().add(iteration);
+        assertEquals(0,wellFormedProject.summarize().toDays());
+
+    }
+
     private void setupWellFormedProject() {
 
         Group group = new Group(faker.team().name());

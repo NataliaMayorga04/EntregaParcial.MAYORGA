@@ -41,7 +41,6 @@ public class    Iteration {
         return count;
     }
 
-
     public Duration getDuration() throws SabanaResearchException {
         if (this.activities.isEmpty()){
             throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_ITERATION);
@@ -51,5 +50,10 @@ public class    Iteration {
             d = d.plus(a.getDuration());
         }
         return d;
+    }
+
+    public Duration getActivitiesDuration() throws SabanaResearchException{
+        return this.getDuration();
+
     }
 }

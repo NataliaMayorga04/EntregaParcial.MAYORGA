@@ -25,4 +25,5 @@ public class Student {
     public List<NormalActivity> getAssignedActivities() {
         return assignedActivities;
     }
+
 }

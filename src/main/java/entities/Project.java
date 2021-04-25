@@ -11,9 +11,10 @@ public class Project {
     private LocalDate dateInit;
     private LocalDate dateEnd;
     private Group group;
-    private List<Iteration> iterations;
+    private List<Iteration> iterations = new ArrayList<>();
     private StudentSynthesizer studentSynthesizer = new StudentSynthesizer();
     private List<Student> students = new ArrayList<>();
+    private ExecutiveSynthesizer executiveSynthesizer = new ExecutiveSynthesizer();
 
     public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
         this.name = name;
@@ -69,10 +70,28 @@ public class Project {
     }
 
     public Duration summarize() throws SabanaResearchException {
-        return studentSynthesizer.synthesize(this.students);
+        Duration d= Duration.ZERO;
+        if(this.isStudentSynthesizer()){
+            d = studentSynthesizer.synthesize(this.students, this.iterations);
+        }
+        else {
+            d = executiveSynthesizer.synthesize(this.students, this.iterations);
+        }
+        return studentSynthesizer.synthesize(this.students, null);
     }
 
     public List<Student> getStudents() {
         return students;
+    }
+    public boolean isStudentSynthesizer(){
+        boolean resolve= true;
+        if (this.students.isEmpty()){
+            resolve = false;
+        }
+        return resolve;
+    }
+
+    public List<Iteration> getIterations() {
+        return iterations;
     }
 }
