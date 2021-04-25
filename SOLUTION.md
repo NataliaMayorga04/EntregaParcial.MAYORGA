@@ -29,7 +29,6 @@ Por otro lado lo que no se debe cambiar, es la manera en la que se llama a los p
 
 
 **BONO SEGUNDO PARCIAL**
-
 ![img_4.png](img_4.png)
 
 **BONO PRIMER PARCIAL**

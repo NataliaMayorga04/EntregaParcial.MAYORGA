@@ -100,6 +100,20 @@ public class ProjectTest {
         assertEquals(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY, exception.getMessage());
     }
 
+    @Test
+    @DisplayName("GIVEN a documented activity with normal activity without steps WHEN get duration THEN get SabanaResearchException")
+    public void shouldCalculateStudentsSynthesizer() throws SabanaResearchException{
+        Student student1 = new Student();
+        StudentSynthesizer studentSynthesizer1 = new StudentSynthesizer();
+        Iteration iteration = new Iteration("Goal",wellFormedProject);
+        NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
+        normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        wellFormedProject.getStudents().add(student1);
+        student1.getAssignedActivities().add(normalActivity);
+        assertEquals(1,wellFormedProject.summarize().toDays());
+
+    }
+
     private void setupWellFormedProject() {
 
         Group group = new Group(faker.team().name());

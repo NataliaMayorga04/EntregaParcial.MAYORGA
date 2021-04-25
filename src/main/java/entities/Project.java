@@ -12,6 +12,8 @@ public class Project {
     private LocalDate dateEnd;
     private Group group;
     private List<Iteration> iterations;
+    private StudentSynthesizer studentSynthesizer = new StudentSynthesizer();
+    private List<Student> students = new ArrayList<>();
 
     public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
         this.name = name;
@@ -66,4 +68,11 @@ public class Project {
         return d;
     }
 
+    public Duration summarize() throws SabanaResearchException {
+        return studentSynthesizer.synthesize(this.students);
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
 }
