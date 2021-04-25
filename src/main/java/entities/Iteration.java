@@ -31,6 +31,16 @@ public class    Iteration {
         }
         return count;
     }
+    public int countCloseActivities() {
+        int count=0;
+        for (Activity a:this.activities) {
+            if (!a.isActive()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 
     public Duration getDuration() throws SabanaResearchException {
         if (this.activities.isEmpty()){

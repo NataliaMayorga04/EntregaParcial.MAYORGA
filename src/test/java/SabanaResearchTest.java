@@ -83,4 +83,26 @@ public class SabanaResearchTest {
         assertEquals(summary.getActiveProjects(), 2, "Validate number of active projects");
         assertEquals(sabanaResearch.countOfSummaries(), 1, "The default count of summaries");
     }
+
+    @Test
+    @DisplayName("GIVEN iteration WHEN activity is closed THEN print the close activities")
+    public void shouldCalculateCloseActivities() {
+
+        assertEquals(0,this.iterations.get(3).countCloseActivities());
+        assertEquals(1,this.iterations.get(2).countCloseActivities());
+        assertEquals(2,this.iterations.get(1).countCloseActivities());
+        assertEquals(2,this.iterations.get(0).countCloseActivities());
+    }
+
+    @Test
+    @DisplayName("GIVEN iteration WHEN activity is closed THEN print the open activities")
+    public void shouldCalculateOpenActivities() {
+
+        assertEquals(1,this.iterations.get(3).countOpenActivities());
+        assertEquals(1,this.iterations.get(2).countOpenActivities());
+        assertEquals(0,this.iterations.get(1).countOpenActivities());
+        assertEquals(0,this.iterations.get(0).countOpenActivities());
+
+    }
+
 }
